@@ -22,9 +22,17 @@ fetch("https://www.course-api.com/javascript-store-products")
                 <img src="${url}" alt="${name}" width="50">
                 <strong>${name}</strong> - ${company} - $${(price / 100).toFixed(2)}
             `
-
+            
             productList.appendChild(listItem)
         })
     })
+
+    // Task 4: Handle Errors Gracefully
+
+    .catch(error => {
+        productList.textContent = "Failed to load products. Please try again later."
+        console.error("There was a problem with the fetch operation:", error)
+    })
+
 
 
