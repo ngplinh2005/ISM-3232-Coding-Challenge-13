@@ -18,11 +18,8 @@ fetch("https://www.course-api.com/javascript-store-products")
             const { fields: { company, name, price, image: { url } } } = product
 
             const listItem = document.createElement("li")
-            listItem.innerHTML = `
-                <img src="${url}" alt="${name}" width="50">
-                <strong>${name}</strong> - ${company} - $${(price / 100).toFixed(2)}
-            `
-            
+            listItem.textContent = `${name} - ${company} - $${(price / 100).toFixed(2)}`
+    
             productList.appendChild(listItem)
         })
     })
